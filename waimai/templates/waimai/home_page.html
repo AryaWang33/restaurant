@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1> Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door</p>
+
+	<h2>Here are all our items!</h2>
+
+	<!-- Item 1 -->
+	<p>pizza: 60rmb</p>
+	<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4094514769,2348269461&fm=27&gp=0.jpg">
+
+	<!-- Item 2 -->
+	<p>stretched noodles: 50rmb</p>
+	<img src="https://image.baidu.com/search/detail?ct=503316480&z=&tn=baiduimagedetail&ipn=d&word=%E6%8B%89%E9%9D%A2&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=-1&cs=1051325164,1597482172&os=1628519506,3484693645&simid=4143892094,663324240&pn=6&rn=1&di=161046403320&ln=1976&fr=&fmq=1524398540570_R&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=0,0&istype=2&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&hs=2&objurl=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F014fa958803390a801219c770aaa28.jpg%401280w_1l_2o_100sh.jpg&rpstart=0&rpnum=0&adpicid=0">
+
+	<!-- Item 3 -->
+	<p>Fries: 10RMB</p>
+	<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3300712092,81599475&fm=200&gp=0.jpg">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'waimai:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="item" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Item Ordered: {{item}}</p>
+	<p>Delivery Address: {{address}}</p>
+
+</body>
+</html>
